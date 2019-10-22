@@ -119,9 +119,9 @@ class Api {
   }
 }
 
+const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3';
 
-
-const api = new Api('http://95.216.175.5/cohort3', '549369e6-22a5-4f49-bf55-d055fc07237e');
+const api = new Api(serverUrl, '549369e6-22a5-4f49-bf55-d055fc07237e');
 
 api.laiked().then(result => console.log(result[0].likes));
 
