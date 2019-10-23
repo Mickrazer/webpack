@@ -1,4 +1,4 @@
-{
+ {
   "name": "webpack_praktika",
   "version": "0.0.1",
   "description": "",
@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Mickrazer/webpack/issues"
   },
-  "homepage": "https://github.com/Mickrazer/webpack#readme",
+  "homepage": "https://github.com/Mickrazer/webpack/",
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
