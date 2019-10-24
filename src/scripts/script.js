@@ -1,6 +1,9 @@
 import {api} from './api.js';
-import {Card, CardList} from './card.js';
-import {Popup, PopupEdit, PopupCard} from './popup.js';
+import {Card} from './card.js';
+import {Popup} from './popup.js';
+import {CardList} from './cardList.js';
+import {PopupEdit} from './popupEdit.js';
+import {PopupCard} from './popupCard.js';
 
 
 const initialCards = [];
