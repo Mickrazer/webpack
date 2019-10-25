@@ -1,3 +1,6 @@
+const userName = document.querySelector('.user-info__name');
+const userJob = document.querySelector('.user-info__job');
+
 class Api {
   constructor(url, token) {
     this.url = url;

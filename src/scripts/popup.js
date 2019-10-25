@@ -1,4 +1,11 @@
-import {api} from './api.js';
+const popupClose = document.querySelector('.popup__close');
+const iconLike = document.querySelector('.place-card__like-icon');
+const addCardButton = document.querySelector('.popup__button');
+const form = document.forms.new;
+const name = form.elements.name;
+const link = form.elements.link;
+
+
 
 export class Popup{
   constructor(popupElement){
@@ -50,5 +57,6 @@ export class Popup{
   
   }
 }
+
 
 

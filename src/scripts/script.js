@@ -8,9 +8,6 @@ import {PopupCard} from './popupCard.js';
 
 const initialCards = [];
 const infoButton = document.querySelector('.user-info__button');
-const popupClose = document.querySelector('.popup__close');
-const iconLike = document.querySelector('.place-card__like-icon');
-const addCardButton = document.querySelector('.popup__button');
 const placesList = document.querySelector('.places-list');
 const editButton = document.querySelector('.edit__button');
 const editPopup = document.getElementById('editPopup');
@@ -25,8 +22,6 @@ const editForm = document.forms.editForm;
 const editName = editForm.elements.name;
 const editInfo = editForm.elements.info;
 
-editName.value = userName.textContent;
-editInfo.value = userJob.textContent;
 
 
 
@@ -55,6 +50,38 @@ api.dataLoading().then((result) => {
 
   })
 
+const popupForm = document.querySelector('.popup__form');
 
+popupForm.addEventListener('input', function() {
+  
+
+    if (name.value.length !== 0 && link.value.length !== 0){
+    addCardButton.classList.add('popup__button_active');
+
+    } 
+    else {
+      addCardButton.classList.remove('popup__button_active');
+
+}
+  
+
+  form.addEventListener('submit', function(event){
+
+  event.preventDefault();
+
+  if (name.value.length === 0 || link.value.length === 0){
+    addCardButton.setAttribute('disabled', true);
+
+  } else {
+
+    cardList.addCard(form.elements.name.value,form.elements.link.value);
+    popup.close();
+
+  }
+  addCardButton.removeAttribute('disabled');
+  addCardButton.classList.remove('popup__button_active');
+
+});
+});
 
 

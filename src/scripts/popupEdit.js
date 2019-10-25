@@ -1,5 +1,14 @@
 import {api} from './api.js';
 import {Popup} from './popup.js';
+const editButton = document.querySelector('.edit__button');
+const editPopup = document.getElementById('editPopup');
+const editForm = document.forms.editForm;
+const editName = editForm.elements.name;
+const editInfo = editForm.elements.info;
+const userName = document.querySelector('.user-info__name');
+const userJob = document.querySelector('.user-info__job'); 
+editName.value = userName.textContent;
+editInfo.value = userJob.textContent;
 
 
 export class PopupEdit extends Popup{
@@ -44,48 +53,8 @@ export class PopupEdit extends Popup{
 }
 
 
-const editForm = document.forms.editForm;
-const editName = editForm.elements.name;
-const editInfo = editForm.elements.info;
-const userName = document.querySelector('.user-info__name');
-const userJob = document.querySelector('.user-info__job'); 
-editName.value = userName.textContent;
-editInfo.value = userJob.textContent;
 
 
-const popupForm = document.querySelector('.popup__form');
-
-popupForm.addEventListener('input', function() {
-  
-
-    if (name.value.length !== 0 && link.value.length !== 0){
-    addCardButton.classList.add('popup__button_active');
-
-    } 
-    else {
-      addCardButton.classList.remove('popup__button_active');
-
-    }
-  
-
-  form.addEventListener('submit', function(event){
-
-  event.preventDefault();
-
-  if (name.value.length === 0 || link.value.length === 0){
-    addCardButton.setAttribute('disabled', true);
-
-  } else {
-
-    cardList.addCard(form.elements.name.value,form.elements.link.value);
-    popup.close();
-
-  }
-  addCardButton.removeAttribute('disabled');
-  addCardButton.classList.remove('popup__button_active');
-
-});
-});
 
 editName.addEventListener('input', handleValidate);
 editInfo.addEventListener('input', handleValidate);
