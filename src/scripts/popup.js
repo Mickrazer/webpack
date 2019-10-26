@@ -1,9 +1,7 @@
-const popupClose = document.querySelector('.popup__close');
-const iconLike = document.querySelector('.place-card__like-icon');
-const addCardButton = document.querySelector('.popup__button');
+
+export const addCardButton = document.querySelector('.popup__button');
 const form = document.forms.new;
-const name = form.elements.name;
-const link = form.elements.link;
+
 
 
 

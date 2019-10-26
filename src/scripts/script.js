@@ -4,13 +4,11 @@ import {Popup} from './popup.js';
 import {CardList} from './cardList.js';
 import {PopupEdit} from './popupEdit.js';
 import {PopupCard} from './popupCard.js';
-
+import {addCardButton} from './popup.js';
 
 const initialCards = [];
 const infoButton = document.querySelector('.user-info__button');
 const placesList = document.querySelector('.places-list');
-const editButton = document.querySelector('.edit__button');
-const editPopup = document.getElementById('editPopup');
 const userName = document.querySelector('.user-info__name');
 const userJob = document.querySelector('.user-info__job'); 
 const avatar = document.querySelector('.user-info__photo');
@@ -26,8 +24,6 @@ const editInfo = editForm.elements.info;
 
 
 const popup = new PopupCard(document.querySelector('.popup'), infoButton);
-const popupImage = new Popup(document.querySelector('.popup'));
-const popupEdit = new PopupEdit(editPopup, editButton);
 const cardList = new CardList(document.querySelector('.places-list'),initialCards);
 
 api.getInitialCards().then((result) => {

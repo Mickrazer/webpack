@@ -45,7 +45,7 @@ class Api {
     console.log(err);
   });    
   }  
-  profileEditSave(){
+  profileEditSave(userName, userInfo){
        return fetch(`${this.url}/users/me`,
     {
     method: 'PATCH',
@@ -54,8 +54,8 @@ class Api {
       'Content-Type': 'application/json'
     },
       body: JSON.stringify({
-      name: userName.textContent,
-      about: userJob.textContent
+      name: userName,
+      about: userInfo
       })
     })
   .then(res => {

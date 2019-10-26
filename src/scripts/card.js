@@ -1,4 +1,4 @@
-//import {api} from './api.js';
+
 import {Popup} from './popup.js';
 const placesList = document.querySelector('.places-list');
 const popupImage = new Popup(document.querySelector('.popup'));

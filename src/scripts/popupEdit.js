@@ -5,6 +5,9 @@ const editPopup = document.getElementById('editPopup');
 const editForm = document.forms.editForm;
 const editName = editForm.elements.name;
 const editInfo = editForm.elements.info;
+
+const changeProfileButton = document.getElementById('changeProfileButton');
+
 const userName = document.querySelector('.user-info__name');
 const userJob = document.querySelector('.user-info__job'); 
 editName.value = userName.textContent;
@@ -25,10 +28,11 @@ export class PopupEdit extends Popup{
     event.preventDefault();
 
       if (editName.value.length !== 0 && editInfo.value.length !== 0) {
-        userName.textContent = editName.value;
-        userJob.textContent =  editInfo.value;
 
-        api.profileEditSave().then(result => console.log(result));
+        api.profileEditSave(editName.value, editInfo.value).then((result) => {
+          userName.textContent = editName.value;
+          userJob.textContent =  editInfo.value;
+        });
 
         editPopup.classList.remove('popup_is-opened');
         changeProfileButton.removeAttribute('disabled');
@@ -53,7 +57,7 @@ export class PopupEdit extends Popup{
 }
 
 
-
+const popupEdit = new PopupEdit(editPopup, editButton);
 
 
 editName.addEventListener('input', handleValidate);
