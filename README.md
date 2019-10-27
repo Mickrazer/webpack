@@ -61,3 +61,4 @@ Cписок плагинов подключенных к Webpack:
     "webpack-dev-server": "^3.8.2",
     
     "webpack-md5-hash": "0.0.6"
+
